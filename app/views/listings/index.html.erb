@@ -1,41 +1,45 @@
 <p id="notice"><%= notice %></p>
-
+<br><br><br>
 <h1>Listings</h1>
-
-<table>
+<div class="product-block">
+<table class="table table-striped table-bordered table-hover bg-light">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Measurements</th>
-      <th>State</th>
-      <th>City</th>
-      <th>Suburb</th>
-      <th>Creator</th>
-      <th colspan="3">Options</th>
+      <th class="col-md-2">Title</th>
+      <th class="col-md-2">Price</th>
+      <th class="col-md-2">Description</th>
+      <th class="col-md-2">Measurements</th>
+      <th class="col-md-2">State</th>
+      <th class="col-md-2">City</th>
+      <th class="col-md-2">Suburb</th>
+      <th class="col-md-2">Seller</th>
+      <th class="col-md-4">Options</th>
     </tr>
   </thead>
 
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.title %></td>
-        <td><%= listing.price %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.measurements %></td>
-        <td><%= listing.state %></td>
-        <td><%= listing.city %></td>
-        <td><%= listing.suburb %></td>
-        <td><%= listing.user.try(:email) %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="col-md-2"><%= listing.title %></td>
+        <td class="col-md-2"><%= listing.price %></td>
+        <td class="col-md-2"><%= listing.description %></td>
+        <td class="col-md-2"><%= listing.measurements %></td>
+        <td class="col-md-2"><%= listing.state %></td>
+        <td class="col-md-2"><%= listing.city %></td>
+        <td class="col-md-2"><%= listing.suburb %></td>
+        <td class="col-md-2"><%= listing.user.try(:username) %></td>
+        <td class="col-md-2"><%= link_to 'Show', listing, class: "btn btn-light" %></td>
+        <td class="col-md-4">
+        <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-light" %></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-light" %></td>
+      </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Listing', new_listing_path %>
+<%= link_to 'New Listing', new_listing_path, class: "btn btn-light" %>
+
+
