@@ -1,6 +1,9 @@
+<br><br><br>
+<div class= "container bg-light form-style">
 <h1>Editing Listing</h1>
 
-<%= render 'form', listing: @listing %>
+<%= render 'form', listing: @listing, class: "btn btn-secondary" %>
 
-<%= link_to 'Show', @listing %> |
-<%= link_to 'Back', listings_path %>
+<%= link_to 'Show', @listing, class: "btn btn-secondary" %> |
+<%= link_to 'Back', listings_path, class: "btn btn-secondary" %>
+</div>

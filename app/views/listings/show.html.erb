@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% @listing.images.each do |image| %>
+<%= image_tag image %>
+<% end %>
+
 <p>
   <strong>Title:</strong>
   <%= @listing.title %>
@@ -33,6 +37,11 @@
 <p>
   <strong>Suburb:</strong>
   <%= @listing.suburb %>
+</p>
+
+<p>
+  <strong>Seller:</strong>
+  <%= @listing.user.try(:username) %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
