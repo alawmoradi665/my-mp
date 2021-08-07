@@ -17,6 +17,9 @@
             PROFILE
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+           <% if user_signed_in? %>
+              <li><%= link_to "My", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+            <% end %>
             <% if user_signed_in? %>
               <li><%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %></li>
             <% else %>
