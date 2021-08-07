@@ -32,6 +32,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
+gem "aws-sdk-s3", require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

@@ -44,5 +44,5 @@
   <%= @listing.user.try(:username) %>
 </p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-secondary" %> |
+<%= link_to 'Back', listings_path, class: "btn btn-secondary" %>

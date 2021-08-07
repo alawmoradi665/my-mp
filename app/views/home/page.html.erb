@@ -1,0 +1,25 @@
+<%# SEARCH BUTTON %>
+<br><br>
+  <div class="container-fluid">
+    <form class="d-flex search-btn">
+      <input class="form-control me-2" type="search" placeholder="I'm looking for ..." aria-label="Search">
+      <button class="btn btn-outline-secondary text-nowrap" type="submit">Find it!</button>
+    </form>
+  </div>
+<%# SEARCH BUTTON %>
+
+<br><br><br>
+<div class= "row">
+    <% @listings.each do |listing| %>
+        <div class= "col-md-4">
+            <div class= "card" style="width: 20rem;">
+                <%= image_tag listing.images.first, class: "card-img-top" %>
+            </div>
+                <div class= "card-body bg-light" style= "width: 20rem">
+                    <p class= "card-text"><%= listing.title %></p>
+                    <p>$<%= listing.price %></p>
+                    <%= link_to 'See more', listing_path(listing.id), class: "btn btn-outline-secondary"%>
+                </div>
+        </div>
+    <% end %>
+</div>
