@@ -73,4 +73,4 @@ class ListingsController < ApplicationController
         redirect_to root_path, notice: 'You are not authorized'
       end
     end
-end
+ end
