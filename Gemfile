@@ -31,7 +31,6 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'devise'
 gem 'cancancan'
-gem 'rolify'
 gem "aws-sdk-s3", require: false
 
 # Reduces boot times through caching; required in config/boot.rb

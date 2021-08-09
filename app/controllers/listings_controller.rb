@@ -67,7 +67,7 @@ class ListingsController < ApplicationController
     def listing_params
       params.require(:listing).permit(:title, :price, :description, :measurements, :state, :city, :suburb, images: [])
     end
-
+# May remove, just incase someone unauthorized gets to the admin page
     def authorize_listing
       unless @listing.user == current_user 
         redirect_to root_path, notice: 'You are not authorized'

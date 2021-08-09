@@ -49,7 +49,8 @@
         <strong>Seller:</strong>
         <%= @listing.user.try(:username) %>
       </p>
-
+      
+<%# Only allow the seller to edit their own post, for other users show msg seller btn, for signed out show nothing %>
       <% if @listing.user == current_user %>   
         <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-secondary" %>
       <% else %> 
