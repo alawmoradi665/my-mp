@@ -18,7 +18,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
            <% if user_signed_in? %>
-              <li><%= link_to "My", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+              <li><%= link_to "My listings", listings_path, class: "dropdown-item" %></li>
             <% end %>
             <% if user_signed_in? %>
               <li><%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %></li>
@@ -39,7 +39,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%# CHANGE TO SHOW MY LISTINGS TO SHOW CURRENT_USER LISTINGS %>
-          <%= link_to 'Show all listings', listings_path, class: "dropdown-item" %>
+          <%= link_to 'Show all (ADMIN)', listings_path, class: "dropdown-item" %>
           <%= link_to 'Create new listing', new_listing_path, class: "dropdown-item" %>
           </ul>
         </li>

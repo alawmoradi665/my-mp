@@ -1,9 +1,14 @@
+<div class="container">
+<div class="row">
+<div class="col">
 <p id="notice"><%= notice %></p>
 
 <% @listing.images.each do |image| %>
-<%= image_tag image %>
+<%= image_tag image, class: "listing-image" %>
 <% end %>
-
+</div>
+<div class="col">
+<br><br>
 <p>
   <strong>Title:</strong>
   <%= @listing.title %>
@@ -44,5 +49,9 @@
   <%= @listing.user.try(:username) %>
 </p>
 
+
 <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-secondary" %> |
-<%= link_to 'Back', listings_path, class: "btn btn-secondary" %>
+<%= link_to 'Back', root_path, class: "btn btn-secondary" %>
+</div>
+</div>
+</div>

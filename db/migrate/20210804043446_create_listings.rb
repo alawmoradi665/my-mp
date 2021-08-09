@@ -8,6 +8,7 @@ class CreateListings < ActiveRecord::Migration[6.0]
       t.string :state
       t.string :city
       t.string :suburb
+      t.datetime :published_at
 
       t.timestamps
     end
