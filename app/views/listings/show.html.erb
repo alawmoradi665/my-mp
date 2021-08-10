@@ -56,6 +56,8 @@
       <% else %> 
         <% if user_signed_in? %>
           <%= link_to 'Message seller', root_path, class: "btn btn-secondary" %>
+          <% else %>
+          <%= link_to 'Message seller', new_user_session_path, class: "btn btn-secondary" %>
         <% end %>
       <% end %>
 
