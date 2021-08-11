@@ -15,11 +15,11 @@
             <div class= "card" style="width: 20rem;">
                 <%= image_tag listing.images.first, class: "card-img-top" %>
             </div>
-                <div class= "card-body bg-light" style= "width: 20rem">
-                    <p class= "card-text"><%= listing.title %></p>
-                    <p>$<%= listing.price %></p>
-                    <%= link_to 'See more', listing_path(listing.id), class: "btn btn-outline-secondary"%>
-                </div>
+              <div class= "card-body bg-light" style= "width: 20rem">
+                <p class= "card-text"><%= listing.title %></p>
+                <p>$<%= listing.price %></p>
+                <%= link_to 'See more', listing_path(listing.id), class: "btn btn-outline-secondary"%>
+              </div>
         </div>
     <% end %>
 </div>

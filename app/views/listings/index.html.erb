@@ -30,19 +30,18 @@
         <td class="col-md-2"><%= link_to 'Show', listing, class: "btn btn-light" %></td>
         <td class="col-md-4">
 
-      <% if has_role? :admin %>
-        <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-light" %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-light" %></td>
-      <% end %>
-      
-      </td>
+          <% if has_role? :admin %>
+            <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-light" %></td>
+            <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-light" %></td>
+          <% end %>
+
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
 <br>
-
 <%= link_to 'New Listing', new_listing_path, class: "btn btn-light" %>
 
 

@@ -4,7 +4,5 @@ class HomeController < ApplicationController
   end
 
   def about
-    @listings = Listing.user_id
   end
-
 end

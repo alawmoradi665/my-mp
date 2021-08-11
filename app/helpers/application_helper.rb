@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-# Define has_role method to use in multiple pages
+# Define has_role method to use in multiple pages for admin
   def has_role?(role)
     current_user && current_user.has_role?(role)
   end 
