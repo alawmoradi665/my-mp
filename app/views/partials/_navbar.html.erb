@@ -39,8 +39,8 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%# CHANGE TO SHOW MY LISTINGS TO SHOW CURRENT_USER LISTINGS %>
-          <% if current_user && current_user.admin %>
-          <%= link_to 'Admin: Show all', rails_admin_path, class: "dropdown-item" %>
+          <% if has_role? :admin %>
+          <%= link_to 'Admin: Show all', listings_path, class: "dropdown-item" %>
           <% end %>
           <%= link_to 'Create new listing', new_listing_path, class: "dropdown-item" %>
           </ul>

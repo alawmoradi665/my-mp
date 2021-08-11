@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_054158) do
     t.string "state"
     t.string "city"
     t.string "suburb"
+    t.datetime "published_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false

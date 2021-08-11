@@ -1,4 +1,9 @@
 module ApplicationHelper
+
+  def has_role?(role)
+    current_user && current_user.has_role?(role)
+  end 
+
     def boostrap_class(alert)
       { success: 'alert-success', error: 'alert-danger', notice: 'alert-success', warning: 'alert-warning',
         danger: 'alert-danger', alert: 'alert-danger' }[alert.to_sym]

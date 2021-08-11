@@ -6,4 +6,6 @@ class Listing < ApplicationRecord
     validates :images, presence: true
     validates :state, presence: true
     validates :city, presence: true
+
+    resourcify
 end

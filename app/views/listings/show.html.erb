@@ -50,8 +50,8 @@
         <%= @listing.user.try(:username) %>
       </p>
       
-<%# Only allow the seller to edit their own post, for other users show msg seller btn, for signed out show nothing %>
-      <% if @listing.user == current_user %>   
+<%# Only allow the seller and admin to edit/delete post, for other users show msg seller btn, for signed out redirect to log in %>
+      <% if @listing.user == current_user || has_role?(:admin) %>   
         <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-secondary" %>
       <% else %> 
         <% if user_signed_in? %>
