@@ -6,7 +6,6 @@ class ListingsController < ApplicationController
   # GET /listings or /listings.json
   def index
     @listings = Listing.all
-    
   end
 
   # GET /listings/1 or /listings/1.json
@@ -27,7 +26,6 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user = current_user
-    # @listing = current_user.listings.new(listing.params)
   
 
     if @listing.save

@@ -1,8 +1,10 @@
 module ApplicationHelper
 
+# Define has_role method to use in multiple pages
   def has_role?(role)
     current_user && current_user.has_role?(role)
   end 
+
 
     def boostrap_class(alert)
       { success: 'alert-success', error: 'alert-danger', notice: 'alert-success', warning: 'alert-warning',

@@ -11,41 +11,46 @@
       </ul>
       <%# RIGHT SIDE %>
       <ul class="navbar-nav me-5 mb-2 mb-lg-0">
-
-       <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             PROFILE
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
            <% if user_signed_in? %>
-              <li><%= link_to "My listings", listings_path, class: "dropdown-item" %></li>
+              <li><a class="dropdown-item" href="/my_listings">My listings</a></li>
             <% end %>
             <% if user_signed_in? %>
               <li><%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %></li>
             <% else %>
               <li><%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %></li>
-              <li><%= link_to "Login", new_user_session_path, class: "dropdown-item" %></li>
+              <li><%= link_to "Log in", new_user_session_path, class: "dropdown-item" %></li>
             <% end %>
               <li role="separator" class="divider"></li>
             <% if user_signed_in? %>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
             <% end %>
           </ul>
         </li>
 
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ADD LISTING
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%# CHANGE TO SHOW MY LISTINGS TO SHOW CURRENT_USER LISTINGS %>
-          <% if has_role? :admin %>
-          <%= link_to 'Admin: Show all', listings_path, class: "dropdown-item" %>
+        <% if has_role? :admin %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              ADD LISTING</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to 'Admin: Show all', listings_path, class: "dropdown-item" %>
+              <%= link_to 'Create new listing', new_listing_path, class: "dropdown-item" %>
+            </ul>
+          </li>
+          <% else %>
+            <% if user_signed_in? %>
+              <%= link_to 'ADD LISTING', new_listing_path, class: "nav-item nav-link" %>
           <% end %>
-          <%= link_to 'Create new listing', new_listing_path, class: "dropdown-item" %>
-          </ul>
-        </li>
-      </div>
+        <% end %>
+          <li class="nav-item">
+            <a class="nav-link"  href="/about">ABOUT US</a>
+          </li>      
+        </div>
+      </ul>
     </div>
   </div>
 </nav>
