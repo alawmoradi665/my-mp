@@ -54,7 +54,6 @@ Ruby, Rails, HTML, CSS, Heroku, Amazon upload
 
 ## R12	User stories for your app
 User:
-
 Home page - user can browse items on site without being signed in -> message seller button redirects to sign in/sign up page
 No add listing button appears
 
@@ -78,6 +77,7 @@ Find attached in docs folder
 ## R15	Explain the different high-level components (abstractions) in your app:
 
 ## R16	Detail any third party services that your app will use:
+Amazon upload is used for image upload on the platform through the listings that get created.
 
 
 ## R17	Describe your projects models in terms of the relationships (active record associations) they have with each other:
@@ -94,4 +94,5 @@ Active storage attachments is connected to the active storage blobs table via th
 Find attached in docs folder 
 
 ## R20	Describe the way tasks are allocated and tracked in your project:
-Tasks are tracked via the current_user which runs the views and authentication for each session. 
+All tasks are tracked through the current_user. The user id of the current_user is tracking who is on the session and shows the views for that user. As for example when creating listings, the creator of the listing will be able to edit/delete whereas other users can't.
+Admin has access to all edits through a given role in the console, the role_id is set to "admin". 
