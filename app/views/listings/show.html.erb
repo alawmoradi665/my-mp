@@ -1,67 +1,67 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <% @listing.images.each do |image| %>
-        <%= image_tag image, class: "listing-image" %>
-      <% end %>
-    </div>
-
-      <div class="col">
-      <br><br>
-      <p>
-        <strong>Title:</strong>
-        <%= @listing.title %>
-      </p>
-
-      <p>
-        <strong>Price:</strong>
-        $<%= @listing.price %>
-      </p>
-
-      <p>
-        <strong>Description:</strong>
-        <%= @listing.description %>
-      </p>
-
-      <p>
-        <strong>Measurements:</strong>
-        <%= @listing.measurements %>
-      </p>
-
-      <p>
-        <strong>State:</strong>
-        <%= @listing.state %>
-      </p>
-
-      <p>
-        <strong>City:</strong>
-        <%= @listing.city %>
-      </p>
-
-      <p>
-        <strong>Suburb:</strong>
-        <%= @listing.suburb %>
-      </p>
-
-      <p>
-        <strong>Seller:</strong>
-        <%= @listing.user.try(:username) %>
-      </p>
-      
-<%# Only allow the seller and admin to edit/delete post, for other users show msg seller btn, for signed out redirect to log in %>
-      <% if @listing.user == current_user || has_role?(:admin) %>   
-        <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-secondary" %>
-      <% else %> 
-        <% if user_signed_in? %>
-          <%= link_to 'Message seller', root_path, class: "btn btn-secondary" %>
-          <% else %>
-          <%= link_to 'Message seller', new_user_session_path, class: "btn btn-secondary" %>
+<%# Left side of listing  %>
+<div class="bg-light p-5 rounded-lg sm-5 listingtron">
+    <div class="row">
+      <div class="col-md-6">
+        <% @listing.images.each do |image| %>
+          <%= image_tag image, class: "listing-image" %>
         <% end %>
-      <% end %>
+      </div>
+  <%# Right side of listing  %>
+        <div class="col-md-6">
+          <p>
+            <strong>Title:</strong><br>
+            <%= @listing.title %>
+          </p>
 
-      <%= link_to 'Back', root_path, class: "btn btn-secondary" %>
+          <p>
+            <strong>Price:</strong><br>
+            $<%= @listing.price %>
+          </p>
+
+          <p>
+            <strong>Description:</strong><br>
+            <%= @listing.description %>
+          </p>
+
+          <p>
+            <strong>Measurements:</strong><br>
+            <%= @listing.measurements %>
+          </p>
+
+          <p>
+            <strong>State:</strong><br>
+            <%= @listing.state %>
+          </p>
+
+          <p>
+            <strong>City:</strong><br>
+            <%= @listing.city %>
+          </p>
+
+          <p>
+            <strong>Suburb:</strong><br>
+            <%= @listing.suburb %>
+          </p>
+
+          <p>
+            <strong>Seller:</strong><br>
+            <%= @listing.user.try(:username) %>
+          </p>
+        
+  <%# Only allow the seller and admin to edit/delete post, for other users show msg seller btn, for signed out redirect to log in %>
+          <% if @listing.user == current_user || has_role?(:admin) %>   
+            <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-secondary" %>
+          <% else %> 
+            <% if user_signed_in? %>
+  <%# Send email to the seller  %>
+              <%= mail_to "#{@listing.user.email}", 'Message seller', class: "btn btn-secondary" %>
+            <% else %>
+              <%= link_to 'Message seller', new_user_session_path, class: "btn btn-secondary" %>
+            <% end %>
+          <% end %>
+        <%= link_to 'Back', root_path, class: "btn btn-secondary" %>
+      </div>
     </div>
   </div>
-</div>

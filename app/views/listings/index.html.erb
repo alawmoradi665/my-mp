@@ -32,7 +32,7 @@
 
           <% if has_role? :admin %>
             <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-light" %></td>
-            <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-light" %></td>
+            <td><%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
           <% end %>
 
         </td>
