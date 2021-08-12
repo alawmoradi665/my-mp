@@ -11,6 +11,7 @@
  
 ### I’m missing:
 - A united marketplace platform for this market of second hand thrifters to browse, buy and sell items: users get to keep making their profits whilst sharing their hobbies on a joint platform
+
 ### I’m making
 - A platform for those vintage homeware gems, for people of interest to create their own market
 - No payments on site - contact seller in the same manner as on gumtree for example
@@ -20,6 +21,11 @@
 - It is a specified marketplace that currently does not have its own marketplace, the sales of these items tend to be spread over different platforms rather than having one place to go for selling, buying and browsing. 
 
 ## R9	A link (URL) to your deployed app (i.e. website):
+Deplyoment failed - look at localhost and sign in with
+alaw.m@hotmail.com
+mangos123
+to see the admin view.
+Create new user for user view.
 
 ## R10	A link to your GitHub repository (repo):
 
