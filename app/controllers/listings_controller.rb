@@ -20,6 +20,10 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
+  # Don't allow users to edit other user's listings 
+    if current_user != @listing.user
+      redirect_to root_path, notice: "That's not your listing to edit mate!"
+    end 
   end
 
   # POST /listings or /listings.json

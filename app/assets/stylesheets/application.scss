@@ -14,18 +14,21 @@
 
  @import "bootstrap";
 
- .navbar{
+ * {
+   box-sizing: border-box;
+}
+
+.navbar{
    font-family: 'Arial', sans-serif; 
    font-weight: 50;
    font-size: 15px;
    
 }
 
- .search-btn{
+.search-btn{
    font-family: 'Arial', sans-serif; 
    font-weight: 50;
    font-size: 14px;
-   
 }
 
 .card-img-top{

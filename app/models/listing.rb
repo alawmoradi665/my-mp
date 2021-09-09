@@ -1,11 +1,12 @@
 class Listing < ApplicationRecord
     belongs_to :user
     has_many_attached :images
-    validates :price, presence: true
+    validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 } 
     validates :title, presence: true
     validates :images, presence: true
     validates :state, presence: true
     validates :city, presence: true
+    validates :suburb, presence: true
     before_validation :validate_title
     before_save :remove_whitespace
 
